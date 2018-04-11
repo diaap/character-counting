@@ -22,10 +22,11 @@ our function needs to return an object that can represent the stats for the sent
 function countLetters (sentence) {
 //var characters = "";
 //var instances = 0;
+  var noSpaces = sentence.split(" ").join("");
 
   var characterCount = {};
-  for (var i = 0; i < sentence.length; i++) {
-  var character = sentence[i];
+  for (var i = 0; i < noSpaces.length; i++) {
+  var character = noSpaces[i];
     if (characterCount[character]) {
       characterCount[character]++;
     } else {
