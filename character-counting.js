@@ -19,21 +19,22 @@ our function needs to return an object that can represent the stats for the sent
 
  */
 
-function countLetters (sentence) {
-//var characters = "";
-//var instances = 0;
-  var noSpaces = sentence.split(" ").join("");
+function countLetters (str) {
+  let newStr = str.split('');
+  let uniqueChars = {};
 
-  var characterCount = {};
-  for (var i = 0; i < noSpaces.length; i++) {
-  var character = noSpaces[i];
-    if (characterCount[character]) {
-      characterCount[character]++;
-    } else {
-      characterCount[character] = 1;
+  for (let i = 0; i < newStr.length; i++) {
+    let curChar = newStr[i];
+    if (curChar !== ' ') {
+      if (uniqueChars[curChar]) {
+        uniqueChars[curChar]++;
+      } else {
+        uniqueChars[curChar] = 1;
+      }
     }
   }
-  return characterCount;
+
+  return uniqueChars;
 
 };
 
